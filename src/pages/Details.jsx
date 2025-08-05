@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
 import axios from "axios"
+import "./Details.css"
 function Details (){
 
     const {id} = useParams()
@@ -18,7 +19,7 @@ function Details (){
         <>
             <div className="container">
                 <div className="imgContainer">
-                    <img src={singleFilm.image} alt={singleFilm.title}/>
+                    <img src={singleFilm.image} alt={singleFilm.title} className="detailsImage"/>
                 </div>
                 <div className="dataContainer">
                     <h2>{singleFilm.title} {singleFilm.release_year}</h2>
