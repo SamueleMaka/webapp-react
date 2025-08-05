@@ -1,7 +1,34 @@
+import { useParams } from "react-router-dom"
+import { useState, useEffect } from "react"
+import axios from "axios"
 function Details (){
-    <>
-        <h1>Movie Details</h1>
-    </>
+
+    const {id} = useParams()
+    const URL_API = `http://localhost:3000/api/movies/${id}`
+
+    const [singleFilm, setSingleFilm] = useState([])
+
+    useEffect(() => {
+        axios.get(URL_API).then(res => {
+            setSingleFilm(res.data)
+        })
+    }, [])
+
+    return(
+        <>
+            <div className="container">
+                <div className="imgContainer">
+                    <img src={singleFilm.image} alt={singleFilm.title}/>
+                </div>
+                <div className="dataContainer">
+                    <h2>{singleFilm.title} {singleFilm.release_year}</h2>
+                    <h2>{singleFilm.director}</h2>
+                    <p>{singleFilm.abstract}</p>
+                </div>
+            </div>
+        </>
+    )
+    
 }
 
 export default Details
