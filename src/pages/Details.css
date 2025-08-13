@@ -2,6 +2,7 @@
     display: flex;
     justify-content: space-between;
     padding-top: 5rem;
+    gap: 5rem;
 }
 
 .detailsImage{
@@ -11,3 +12,32 @@
 
 }
 
+.dataContainer{
+    text-align: center;
+}
+.detailTitle{
+    color: orange;
+    font-size: 3rem;
+}
+
+
+.reviewContainer{
+    margin-top: 3rem;
+    padding: 2rem;
+    border: 5px solid orange;
+    border-radius: 20px;
+    background-color: white;
+}
+
+.reviewContainer h1{
+    color: black;
+    margin-bottom: 4rem;
+    border-bottom: 5px solid orange;
+}
+.reviewContainer p{
+    color: black;
+    padding: 1rem;
+    font-weight: 700;
+    border: 5px dotted orange;
+    margin: 1rem 0;
+}

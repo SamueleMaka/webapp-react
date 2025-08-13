@@ -22,9 +22,20 @@ function Details (){
                     <img src={singleFilm.image} alt={singleFilm.title} className="detailsImage"/>
                 </div>
                 <div className="dataContainer">
-                    <h2>{singleFilm.title} {singleFilm.release_year}</h2>
+                    <h2 className="detailTitle">{singleFilm.title} {singleFilm.release_year}</h2>
                     <h2>{singleFilm.director}</h2>
                     <p>{singleFilm.abstract}</p>
+                    <div className="reviewContainer">
+                        <h1>Reviews</h1>
+                        {
+                            singleFilm.reviews && singleFilm.reviews.map((currRev) =>{
+                                return(
+                                    <p className="review">{currRev.text}</p>
+                                )
+                            }) 
+                        }
+                        
+                    </div>
                 </div>
             </div>
         </>
